@@ -28,3 +28,21 @@ export const CardWithImage: Story = {
     ),
   },
 };
+
+export const CardWithCustomStyle: Story = {
+  args: {
+    children: (
+      <div>
+        <h3>Custom Card</h3>
+        <p>Card with a light background and rounded corners.</p>
+      </div>
+    ),
+    style: {
+      backgroundColor: '#e0f7fa',
+      border: '2px solid #00acc1',
+      color: '#006064',
+      borderRadius: '1rem',
+      width: '20rem',
+    },
+  },
+};
