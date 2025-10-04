@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Card } from './Card';
+import { Button } from '../Button/Button';
 
 const meta: Meta<typeof Card> = {
   title: 'Components/UI/Card',
@@ -45,4 +46,26 @@ export const CardWithCustomStyle: Story = {
       width: '20rem',
     },
   },
+};
+
+export const CardWithNestedElements: Story = {
+  render: () => (
+    <Card
+      style={{
+        width: '22rem',
+        padding: '1.5rem',
+        backgroundColor: '#ffffff',
+        color: '#333',
+        boxShadow: '0 4px 10px rgba(0, 0, 0, 0.1)',
+      }}
+    >
+      <h3 style={{ margin: 0, marginBottom: '0.5rem' }}>Card Title</h3>
+      <p style={{ fontSize: '0.9rem', marginBottom: '1rem' }}>
+        This is a card with nested elements like text, headers and buttons. It shows layout flexibility.
+      </p>
+      <Button variant="primary">
+        Learn More
+      </Button>
+    </Card>
+  ),
 };
