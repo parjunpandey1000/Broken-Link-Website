@@ -7,12 +7,7 @@ import { HomePage } from './pages/Home/Home.page';
 import ScannerPage from './pages/Scanner/Scanner.page';
 import StatisticsPage from './pages/Statistics/Statistics.page';
 
-const withErrorBoundary = (element: React.ReactNode) => (
-  <ErrorBoundary>
-    <ErrorComponent />
-    {element}
-  </ErrorBoundary>
-);
+const withErrorBoundary = (element: React.ReactNode) => <ErrorBoundary>{element}</ErrorBoundary>;
 
 const router = createBrowserRouter([
   {
