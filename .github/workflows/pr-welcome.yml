@@ -18,7 +18,7 @@ jobs:
 
             We'll review it as soon as possible.
 
-            Before we proceed, please double-check:
+            Before we proceed, please double check:
             - The PR title & description clearly explain the changes.
             - All checks/tests pass.
             - You've linked it to an issue (if applicable).
