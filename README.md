@@ -72,9 +72,7 @@ To contribute:
     ```
 7.  Create a **Pull Request** from your repository’s branch to the `main` branch of the original repository.
 
-
-One last thing, We appriciate any one who would like to contribute but **please remove the comments in the code that your llm is generating**.
-Its total ok for us to use llm to generate code, and even recommended but lets keep the code clean and commentless.
+⚠️ Heads up: PRs that are fully Ai generated and not checked by a human won’t be accepted.
 
 ---
 
