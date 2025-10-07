@@ -1,6 +1,10 @@
 # Deadlink-Hunter-Website🕵️
 
-Deadlink-Hunter is an open-source project designed to find broken links in GitHub repositories (with future support for other platforms).
+Deadlink-Hunter is an open-source project d7.  Create a **Pull Request** from your repository's branch to the `main` branch of the original repository.
+
+⚠️ Heads up: PRs that are fully AI generated and not checked by a human won't be accepted.
+
+---ed to find broken links in GitHub repositories (with future support for other platforms).
 The goal is to help maintainers keep their documentation clean, reliable, and frustration-free for readers.
 
 Deadlink Hunder Website is the frontend of the website.
