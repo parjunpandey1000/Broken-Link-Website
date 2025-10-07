@@ -6,6 +6,7 @@ The goal is to help maintainers keep their documentation clean, reliable, and fr
 Deadlink Hunder Website is the frontend of the website.
 
 You can also check [Broken-Link-Checker](https://github.com/Deadlink-Hunter/Broken-Link-Checker), this is the backend of the project that check if a link is broken or not.
+Additionally, check out [Deadlink-Crawler](https://github.com/Deadlink-Hunter/Deadlink-crawler), a new repository for crawling and analyzing links efficiently.
 
 The project was inspires as a way to give back to the open source community, everyone is welcome.
 
@@ -22,16 +23,21 @@ In order to see the ui log in.
 
 
 ## Table of Contents
-- [The why](#the-why)
-- [Contributing](#contributing)
-- [Contributors](#contributors)
-- [Docker Setup](#docker-setup)
-- [Mantine Vite template](#mantine-vite-template)
-- [Features](#features)
-- [pnpm scripts](#pnpm-scripts)
-- [Build and dev scripts](#build-and-dev-scripts)
-  - [Testing scripts](#testing-scripts)
-  - [Other scripts](#other-scripts)
+- [Deadlink-Hunter-Website🕵️](#deadlink-hunter-website️)
+  - [Table of Contents](#table-of-contents)
+  - [The why](#the-why)
+  - [Contributing](#contributing)
+  - [Contributors](#contributors)
+  - [Docker Setup](#docker-setup)
+    - [Option 1: Using Docker Compose (Recommended)](#option-1-using-docker-compose-recommended)
+    - [Option 2: Using Docker directly](#option-2-using-docker-directly)
+    - [Docker Configuration](#docker-configuration)
+  - [Mantine Vite template](#mantine-vite-template)
+  - [Features](#features)
+  - [pnpm scripts](#pnpm-scripts)
+  - [Build and dev scripts](#build-and-dev-scripts)
+    - [Testing scripts](#testing-scripts)
+    - [Other scripts](#other-scripts)
 
 ---
 
