@@ -22,8 +22,7 @@ jobs:
               "We'll review it as soon as possible. We truly appreciate your contributions! ✨",
               "",
               "📖 Please check out the following before creating a PR:",
-              "- [README.md](./README.md)"
-
+              "- [README.md](./README.md)",
               "",
               "⚠️ **Do NOT create a PR until this issue has been assigned to you.** 😊",
               "",
