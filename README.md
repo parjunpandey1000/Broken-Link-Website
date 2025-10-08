@@ -73,7 +73,7 @@ To contribute:
     ```
 7.  Create a **Pull Request** from your repository’s branch to the `main` branch of the original repository.
 
-⚠️ Heads up: PRs that are fully Ai generated and not checked by a human won’t be accepted.
+⚠️ Heads up: PRs that are fully AI generated and not checked by a human won’t be accepted.
 
 ---
 
