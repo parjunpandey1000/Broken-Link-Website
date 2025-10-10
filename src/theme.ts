@@ -81,13 +81,12 @@ const error: MantineColorsTuple = [
 
 // TODO: Check if this is the correct way to create a theme
 
-// Responsive breakpoints for Mantine
 const breakpoints = {
-  xs: '30em',  // 480px
-  sm: '48em',  // 768px
-  md: '64em',  // 1024px
-  lg: '74em',  // 1180px
-  xl: '90em',  // 1440px
+  xs: '30em',  
+  sm: '48em',  
+  md: '64em',  
+  lg: '74em', 
+  xl: '90em', 
 };
 
 export const theme = createTheme({
