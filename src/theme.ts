@@ -78,7 +78,16 @@ const error: MantineColorsTuple = [
   '#6b1414',
 ];
 
+
 // TODO: Check if this is the correct way to create a theme
+
+const breakpoints = {
+  xs: '30em',
+  sm: '48em',
+  md: '64em',
+  lg: '74em',
+  xl: '90em',
+};
 
 const appColors = {
   primary,
@@ -111,6 +120,7 @@ const themeOverride = createTheme({
     xl: '32px',
     '2xl': '64px',
   },
+  breakpoints,
 });
 
 export const theme = mergeMantineTheme(DEFAULT_THEME, themeOverride);
