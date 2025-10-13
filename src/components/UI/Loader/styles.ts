@@ -1,4 +1,3 @@
-// src/components/UI/Loader/styles.ts
 import { rem, useMantineTheme } from "@mantine/core";
 
 export function useStyles() {
@@ -17,7 +16,7 @@ export function useStyles() {
   };
 }
 
-// Optional variant styling (similar to Button)
+//variant styling similar to button
 export const loaderVariants = (theme: ReturnType<typeof useMantineTheme>) => ({
   primary: { color: theme.colors.primary?.[5] ?? theme.colors.blue[5] },
   secondary: { color: theme.colors.purple?.[5] ?? theme.colors.violet[5] },
