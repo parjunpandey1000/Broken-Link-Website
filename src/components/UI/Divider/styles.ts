@@ -1,8 +1,7 @@
 import { theme } from '@/theme';
 
 const defaultDividerStyle = {
-  // TODO: Replace with theme spacing when we will fix the type of the theme 
-  margin: theme.spacing?.md || '16px',
+  margin: theme.spacing?.md,
   height: '1px',
 };
 
