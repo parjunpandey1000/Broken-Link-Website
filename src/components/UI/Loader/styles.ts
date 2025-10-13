@@ -9,14 +9,13 @@ export function useStyles() {
       alignItems: "center",
       justifyContent: "center",
       padding: theme.spacing.md,
-      // use the theme primary color; fallback to blue if not found
       color: theme.colors[theme.primaryColor]?.[6] ?? theme.colors.blue[6],
       minHeight: rem(60),
     },
   };
 }
 
-//variant styling similar to button
+
 export const loaderVariants = (theme: ReturnType<typeof useMantineTheme>) => ({
   primary: { color: theme.colors.primary?.[5] ?? theme.colors.blue[5] },
   secondary: { color: theme.colors.purple?.[5] ?? theme.colors.violet[5] },
