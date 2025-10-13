@@ -124,11 +124,3 @@ const themeOverride = createTheme({
 });
 
 export const theme = mergeMantineTheme(DEFAULT_THEME, themeOverride);
-
-// type ExtendedThemeColors = keyof typeof appColors;
-
-// declare module '@mantine/core' {
-//   export interface MantineThemeColorsOverride {
-//     colors: Record<ExtendedThemeColors, MantineColorsTuple>;
-//   }
-// }
