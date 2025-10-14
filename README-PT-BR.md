@@ -94,3 +94,13 @@ Este template vem com as seguintes funcionalidades:
 - `storybook` – inicia o servidor de desenvolvimento do Storybook
 - `storybook:build` – cria o bundle de produção do Storybook em `storybook-static`
 - `prettier:write` – formata todos os arquivos com o Prettier
+
+## Contributors
+
+Thanks to all the amazing contributors who have helped make this project better! 🎉
+
+<a href="https://github.com/Deadlink-Hunter/Broken-Link-Website/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=Deadlink-Hunter/Broken-Link-Website" alt="Contributors" />
+</a>
+
+---
