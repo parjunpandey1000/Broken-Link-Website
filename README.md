@@ -90,16 +90,6 @@ To contribute:
 
 ---
 
-## Contributors
-
-Thanks to all the amazing contributors who have helped make this project better! 🎉
-
-<a href="https://github.com/Deadlink-Hunter/Broken-Link-Website/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=Deadlink-Hunter/Broken-Link-Website" alt="Contributors" />
-</a>
-
----
-
 ## Docker Setup
 
 This project includes Docker support for easy deployment and development. You can run the application using Docker in two ways:
@@ -184,3 +174,13 @@ This template comes with the following features:
 - `storybook` – starts storybook dev server
 - `storybook:build` – build production storybook bundle to `storybook-static`
 - `prettier:write` – formats all files with Prettier
+
+## Contributors
+
+Thanks to all the amazing contributors who have helped make this project better! 🎉
+
+<a href="https://github.com/Deadlink-Hunter/Broken-Link-Website/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=Deadlink-Hunter/Broken-Link-Website" alt="Contributors" />
+</a>
+
+---
