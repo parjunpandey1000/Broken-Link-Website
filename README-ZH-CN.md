@@ -79,15 +79,6 @@ Deadlink Hunter Website 是该网站的前端部分。
 
 ---
 
-## 贡献者
-
-感谢所有帮助改进本项目的优秀贡献者！🎉
-
-<a href="https://github.com/Deadlink-Hunter/Broken-Link-Website/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=Deadlink-Hunter/Broken-Link-Website" alt="Contributors" />
-</a>
-
----
 
 ## Docker 配置
 
@@ -173,3 +164,14 @@ docker run -p 80:6006 deadlink-hunter
 - `storybook` – 启动 storybook 开发服务器
 - `storybook:build` – 将生产版 storybook 构建到 `storybook-static`
 - `prettier:write` – 使用 Prettier 格式化所有文件
+
+
+## 贡献者
+
+感谢所有帮助改进本项目的优秀贡献者！🎉
+
+<a href="https://github.com/Deadlink-Hunter/Broken-Link-Website/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=Deadlink-Hunter/Broken-Link-Website" alt="Contributors" />
+</a>
+
+---
