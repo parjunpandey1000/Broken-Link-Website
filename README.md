@@ -1,6 +1,5 @@
 # Deadlink-Hunter-Website🕵️
 
-
 ## Prefer a different language?
 
 This README is available in multiple languages. Click below to switch:
@@ -29,7 +28,7 @@ You can check the [more elaborated ui](https://link-guard-191fc128.base44.app) t
 
 In order to see the ui log in.
 
-
+<p align="left"><a href="#">Back to the top of page</a></p>
 
 ## Table of Contents
 - [The why](#the-why)
@@ -42,6 +41,9 @@ In order to see the ui log in.
 - [Build and dev scripts](#build-and-dev-scripts)
   - [Testing scripts](#testing-scripts)
   - [Other scripts](#other-scripts)
+
+ 
+<p align="left"><a href="#">Go back to the top of page</a></p>
 ---
 
 ## The Why
@@ -52,6 +54,7 @@ Yet, README files and docs often contain outdated or broken links – even in la
 But aren’t there already broken link checkers?
 There are — but most of them don’t look very good, their UIs are not user-friendly, and their broken link detection doesn’t cover all cases (for example, localhost:4000 is not actually broken).
 
+<p align="left"><a href="#">Go back to the top of the page</a></p>
 ---
 
 ## Contributing
@@ -88,6 +91,7 @@ To contribute:
 
 ⚠️ Heads up: PRs that are fully AI generated and not checked by a human won’t be accepted.
 
+<p align="left"><a href="#">Go back to the top of the page</a></p>
 ---
 
 ## Docker Setup
@@ -127,6 +131,7 @@ docker run -p 80:6006 deadlink-hunter
 
 The application will be available at `http://localhost`
 
+
 ### Docker Configuration
 
 - **Port**: The application runs on port `6006` inside the container and is mapped to port `80` on your host machine
@@ -134,12 +139,13 @@ The application will be available at `http://localhost`
 - **Build Process**: Multi-stage build that installs dependencies, builds the app, and serves it with nginx
 - **Base Image**: Built on `node:20-alpine` for the build stage and `nginx:1.27-alpine` for the runtime
 
+<p align="left"><a href="#">Go back to the top of the page</a></p>
 ---
 
 ## Mantine Vite template
 
 This project is based on the Mantine Vite template.
-
+<p align="left"><a href="#">Go back to the top of the page</a></p>
 ## Features
 
 This template comes with the following features:
@@ -150,10 +156,11 @@ This template comes with the following features:
 - [Vitest](https://vitest.dev/) setup with [React Testing Library](https://testing-library.com/docs/react-testing-library/intro)
 - ESLint setup with [eslint-config-mantine](https://github.com/mantinedev/eslint-config-mantine)
 
+<p align="left"><a href="#">Go back to the top of the page</a></p>
 ---
 
 ## pnpm scripts
-
+<p align="left"><a href="#">Go back to the top of the page</a></p>
 ## Build and dev scripts
 
 - `dev` – start development server
@@ -175,12 +182,14 @@ This template comes with the following features:
 - `storybook:build` – build production storybook bundle to `storybook-static`
 - `prettier:write` – formats all files with Prettier
 
+<p align="left"><a href="#">Go back to the top of the page</a></p>
 ## Contributors
 
 Thanks to all the amazing contributors who have helped make this project better! 🎉
 
+
 <a href="https://github.com/Deadlink-Hunter/Broken-Link-Website/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=Deadlink-Hunter/Broken-Link-Website" alt="Contributors" />
 </a>
-
+<p align="left"><a href="#">Go back to the top of the page</a></p>
 ---
