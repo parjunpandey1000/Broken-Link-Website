@@ -58,13 +58,15 @@ There are — but most of them don’t look very good, their UIs are not user-fr
 
 Contributions are welcome and greatly appreciated!
 
-To contribute:
+For detailed information on how to contribute, including development setup, style guide, and pull request process, please see our [**CONTRIBUTING.md**](CONTRIBUTING.md) file.
+
+### Quick Start
 
 1.  **Fork** this repository to your own GitHub account.
 2.  **Clone** your fork locally:
     ```bash
-    git clone https://github.com/<your-username>/Deadlink-Hunter.git
-    cd Deadlink-Hunter
+    git clone https://github.com/<your-username>/Broken-Link-Website.git
+    cd Broken-Link-Website
     ```
 3. (Optional) Install pnpm package manager from this [link](https://pnpm.io/installation).
 4.  Install dependencies using **pnpm** (please do not use npm or yarn):
