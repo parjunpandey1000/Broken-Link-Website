@@ -1,22 +1,16 @@
-import { rem, useMantineTheme } from "@mantine/core";
+import { rem, MantineTheme } from "@mantine/core";
 
-export function useStyles() {
-  const theme = useMantineTheme();
-  
+export function useStyles(theme: MantineTheme) {  
   return {
     loaderWrapper: {
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      padding: theme.spacing.md,
       color: theme.colors[theme.primaryColor]?.[6] ?? theme.colors.blue[6],
       minHeight: rem(60),
     },
   };
 }
 
-export const loaderVariants = (theme: ReturnType<typeof useMantineTheme>) => ({
+export const loaderVariants = (theme: MantineTheme) => ({
   primary: {
-    color: theme.colors[theme.primaryColor]?.[6] ?? theme.colors.blue[6],
+    color: theme.colors.blue[6],
   },
 });

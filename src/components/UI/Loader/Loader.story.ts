@@ -7,8 +7,8 @@ const meta: Meta<typeof Loader> = {
   tags: ["autodocs"],
   argTypes: {
     size: {
-      control: "select",
-      options: ["xs", "sm", "md", "lg", "xl"],
+      control: { type: 'select' },
+      options: ['small', 'medium', 'large', 'extraLarge'],
       description: "Loader size",
     },
     variant: {
@@ -32,7 +32,7 @@ type Story = StoryObj<typeof Loader>;
 
 export const Default: Story = {
   args: {
-    size: "md",
+    size: "medium",
     variant: "primary",
   },
 };
