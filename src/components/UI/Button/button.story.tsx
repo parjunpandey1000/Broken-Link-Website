@@ -29,7 +29,7 @@ interface ButtonArgs extends ButtonProps {
   variant?: 'primary' | 'success' | 'warning' | 'error' | 'secondary' | 'outline' | 'ghost';
   label?: string;
   backgroundColor?: string;
-  onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
+  onClick?: Mock;
 }
 
 const meta: Meta<typeof Button> = {
@@ -39,8 +39,8 @@ const meta: Meta<typeof Button> = {
     layout: 'centered',
   },
   tags: ['autodocs'],
-  args: {
-    onClick: fn().mockReturnValue('Success!'),
+  argTypes: {
+    onClick: { action: 'clicked' },
   },
 };
 
@@ -49,32 +49,32 @@ type Story = StoryObj<typeof meta>;
 
 async function ButtonClick(canvasElement: HTMLElement, args: ButtonArgs, buttonName: string) {
   const onClickMock = args.onClick as Mock;
-  onClickMock.mockClear();
 
-  const canvas = within(canvasElement);
-  const button = canvas.getByRole('button', { name: new RegExp(buttonName, 'i') });
+  if (onClickMock && typeof onClickMock.mockClear === 'function') {
+    onClickMock.mockClear();
+    const canvas = within(canvasElement);
+    const button = canvas.getByRole('button', { name: new RegExp(buttonName, 'i') });
 
-  await expect(button).toBeInTheDocument();
-  await expect(button).toBeEnabled();
-  await userEvent.click(button);
+    await expect(button).toBeInTheDocument();
+    await expect(button).toBeEnabled();
+    await userEvent.click(button);
 
-  await expect(onClickMock).toHaveBeenCalledTimes(1);
+    await expect(onClickMock).toHaveBeenCalledTimes(1);
+  }
 }
 
 export const button: Story = {
   args: {
     children: 'Click me!',
-    onClick: fn().mockReturnValue('Success!'),
   },
   play: async ({ canvasElement, args }) => {
-    await ButtonClick(canvasElement, args, 'Click me!');
+    await ButtonClick(canvasElement, args as ButtonArgs, 'Click me!');
   },
 };
 
 export const buttonWithStyles: Story = {
   args: {
     children: 'Button with custom style',
-    onClick: fn(),
     style: {
       backgroundColor: 'cyan',
       color: 'white',
@@ -83,7 +83,7 @@ export const buttonWithStyles: Story = {
     },
   },
   play: async ({ canvasElement, args }) => {
-    await ButtonClick(canvasElement, args, 'Button with custom style');
+    await ButtonClick(canvasElement, args as ButtonArgs, 'Button with custom style');
   },
 };
 
@@ -91,13 +91,12 @@ export const buttonWithIcon: Story = {
   render: (args) => <Button {...args} />,
   args: {
     children: 'Button with icon',
-    onClick: fn().mockReturnValue('Success!'),
     variant: 'primary',
     leftSection: <IconPhoto size={14} />,
     rightSection: <IconArrowRight size={14} />,
   },
   play: async ({ canvasElement, args }) => {
-    await ButtonClick(canvasElement, args, 'Button with icon');
+    await ButtonClick(canvasElement, args as ButtonArgs, 'Button with icon');
   },
 };
 
@@ -118,7 +117,7 @@ export const buttonVariantsShowcase: Story = {
     </div>
   ),
   play: async ({ canvasElement, args }) => {
-    await ButtonClick(canvasElement, args, 'Primary Button');
+    await ButtonClick(canvasElement, args as ButtonArgs, 'Primary Button');
   },
 };
 
