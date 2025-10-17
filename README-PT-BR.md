@@ -1,4 +1,6 @@
 # Deadlink-Hunter🕵️
+[![GitHub Stars](https://img.shields.io/github/stars/Deadlink-Hunter/Broken-Link-Website?style=social&label=estrelas)](https://github.com/Deadlink-Hunter/Broken-Link-Website/stargazers)
+[![Licença: MIT](https://img.shields.io/badge/Licença-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 Deadlink-Hunter é um projeto de código aberto criado para encontrar links quebrados em repositórios do GitHub (com suporte futuro para outras plataformas).
 O objetivo é ajudar mantenedores a manter sua documentação limpa, confiável e sem frustrações para leitores.
@@ -94,3 +96,13 @@ Este template vem com as seguintes funcionalidades:
 - `storybook` – inicia o servidor de desenvolvimento do Storybook
 - `storybook:build` – cria o bundle de produção do Storybook em `storybook-static`
 - `prettier:write` – formata todos os arquivos com o Prettier
+
+## Contributors
+
+Thanks to all the amazing contributors who have helped make this project better! 🎉
+
+<a href="https://github.com/Deadlink-Hunter/Broken-Link-Website/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=Deadlink-Hunter/Broken-Link-Website" alt="Contributors" />
+</a>
+
+---
