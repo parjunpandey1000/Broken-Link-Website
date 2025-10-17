@@ -1,36 +1,25 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Button } from './Button';
-import { ButtonProps } from '@mantine/core';
 import { IconArrowRight, IconPhoto } from '@tabler/icons-react';
-import { fn, userEvent, expect, within, Mock } from '@storybook/test';
-
+import { fn, userEvent, expect, within } from '@storybook/test';
 
 const BUTTON_VARIANTS = [
-  'primary', 
-  'secondary', 
-  'success', 
-  'warning', 
-  'error', 
-  'outline', 
-  'ghost'
+  'primary',
+  'secondary',
+  'success',
+  'warning',
+  'error',
+  'outline',
+  'ghost',
 ] as const;
 
 const DISABLE_BUTTON_VARIANTS = [
-  'primary', 
-  'secondary', 
-  'success', 
-  'outline', 
-  'ghost'
+  'primary',
+  'secondary',
+  'success',
+  'outline',
+  'ghost',
 ] as const;
-
-
-interface ButtonArgs extends ButtonProps {
-  style?: React.CSSProperties;
-  variant?: 'primary' | 'success' | 'warning' | 'error' | 'secondary' | 'outline' | 'ghost';
-  label?: string;
-  backgroundColor?: string;
-  onClick?: Mock;
-}
 
 const meta: Meta<typeof Button> = {
   title: 'Components/UI/Button',
@@ -47,31 +36,25 @@ const meta: Meta<typeof Button> = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-async function ButtonClick(canvasElement: HTMLElement, args: ButtonArgs, buttonName: string) {
-  const onClickMock = args.onClick as Mock;
+async function ButtonClick(canvasElement: HTMLElement, buttonName: string) {
+  const onClickMock = fn();
+  const canvas = within(canvasElement);
+  const button = canvas.getByRole('button', { name: new RegExp(buttonName, 'i') });
 
-  if (onClickMock && typeof onClickMock.mockClear === 'function') {
-    onClickMock.mockClear();
-    const canvas = within(canvasElement);
-    const button = canvas.getByRole('button', { name: new RegExp(buttonName, 'i') });
+  button.onclick = onClickMock;
 
-    await expect(button).toBeInTheDocument();
-    await userEvent.click(button);
-
-    await expect(onClickMock).toHaveBeenCalledTimes(1);
-  } else {
-    const canvas = within(canvasElement);
-    const button = canvas.getByRole('button', { name: new RegExp(buttonName, 'i') });
-    await userEvent.click(button);
-  }
+  await expect(button).toBeInTheDocument();
+  await expect(button).toBeEnabled();
+  await userEvent.click(button);
+  await expect(onClickMock).toHaveBeenCalledTimes(1);
 }
 
 export const button: Story = {
   args: {
     children: 'Click me!',
   },
-  play: async ({ canvasElement, args }) => {
-    await ButtonClick(canvasElement, args as ButtonArgs, 'Click me!');
+  play: async ({ canvasElement }) => {
+    await ButtonClick(canvasElement, 'Click me!');
   },
 };
 
@@ -85,8 +68,8 @@ export const buttonWithStyles: Story = {
       width: '35rem',
     },
   },
-  play: async ({ canvasElement, args }) => {
-    await ButtonClick(canvasElement, args as ButtonArgs, 'Button with custom style');
+  play: async ({ canvasElement }) => {
+    await ButtonClick(canvasElement, 'Button with custom style');
   },
 };
 
@@ -98,29 +81,27 @@ export const buttonWithIcon: Story = {
     leftSection: <IconPhoto size={14} />,
     rightSection: <IconArrowRight size={14} />,
   },
-  play: async ({ canvasElement, args }) => {
-    await ButtonClick(canvasElement, args as ButtonArgs, 'Button with icon');
+  play: async ({ canvasElement }) => {
+    await ButtonClick(canvasElement, 'Button with icon');
   },
 };
 
 export const buttonVariantsShowcase: Story = {
-  render: ({ onClick }) => (
+  render: (args) => (
     <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem' }}>
-      {BUTTON_VARIANTS.map(
-        (variant) => (
-          <Button 
-            key={variant} 
-            variant={variant}
-            onClick={onClick}
-          >
-            {variant.charAt(0).toUpperCase() + variant.slice(1)} Button
-          </Button>
-        )
-      )}
+      {BUTTON_VARIANTS.map((variant) => (
+        <Button
+          key={variant}
+          variant={variant}
+          onClick={args.onClick}
+        >
+          {variant.charAt(0).toUpperCase() + variant.slice(1)} Button
+        </Button>
+      ))}
     </div>
   ),
-  play: async ({ canvasElement, args }) => {
-    await ButtonClick(canvasElement, args as ButtonArgs, 'Primary Button');
+  play: async ({ canvasElement }) => {
+    await ButtonClick(canvasElement, 'Primary Button');
   },
 };
 
@@ -135,4 +116,3 @@ export const disabledButtons: Story = {
     </div>
   ),
 };
-
