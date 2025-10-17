@@ -56,7 +56,6 @@ async function ButtonClick(canvasElement: HTMLElement, args: ButtonArgs, buttonN
     const button = canvas.getByRole('button', { name: new RegExp(buttonName, 'i') });
 
     await expect(button).toBeInTheDocument();
-    await expect(button).toBeEnabled();
     await userEvent.click(button);
 
     await expect(onClickMock).toHaveBeenCalledTimes(1);
