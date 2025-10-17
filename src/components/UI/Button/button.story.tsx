@@ -36,7 +36,7 @@ const meta: Meta<typeof Button> = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-async function ButtonClick(canvasElement: HTMLElement, buttonName: string) {
+async function buttonClick(canvasElement: HTMLElement, buttonName: string) {
   const onClickMock = fn();
   const canvas = within(canvasElement);
   const button = canvas.getByRole('button', { name: new RegExp(buttonName, 'i') });
@@ -54,7 +54,7 @@ export const button: Story = {
     children: 'Click me!',
   },
   play: async ({ canvasElement }) => {
-    await ButtonClick(canvasElement, 'Click me!');
+    await buttonClick(canvasElement, 'Click me!');
   },
 };
 
@@ -69,7 +69,7 @@ export const buttonWithStyles: Story = {
     },
   },
   play: async ({ canvasElement }) => {
-    await ButtonClick(canvasElement, 'Button with custom style');
+    await buttonClick(canvasElement, 'Button with custom style');
   },
 };
 
@@ -82,7 +82,7 @@ export const buttonWithIcon: Story = {
     rightSection: <IconArrowRight size={14} />,
   },
   play: async ({ canvasElement }) => {
-    await ButtonClick(canvasElement, 'Button with icon');
+    await buttonClick(canvasElement, 'Button with icon');
   },
 };
 
@@ -100,8 +100,11 @@ export const buttonVariantsShowcase: Story = {
       ))}
     </div>
   ),
+  args: {
+    children: 'Primary Button',
+  },
   play: async ({ canvasElement }) => {
-    await ButtonClick(canvasElement, 'Primary Button');
+    await buttonClick(canvasElement, 'Primary Button');
   },
 };
 
