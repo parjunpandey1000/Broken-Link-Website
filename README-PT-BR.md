@@ -1,4 +1,5 @@
 # Deadlink-Hunter🕵️
+[![Licença: MIT](https://img.shields.io/badge/Licença-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 Deadlink-Hunter é um projeto de código aberto criado para encontrar links quebrados em repositórios do GitHub (com suporte futuro para outras plataformas).
 O objetivo é ajudar mantenedores a manter sua documentação limpa, confiável e sem frustrações para leitores.
