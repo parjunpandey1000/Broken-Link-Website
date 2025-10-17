@@ -1,12 +1,12 @@
 import React from "react";
 import { Loader as MantineLoader, useMantineTheme } from "@mantine/core";
-import { useStyles, loaderVariants } from "./styles";
+import { loaderVariants } from "./styles";
 
 type LoaderSize = "small" | "medium" | "large" | "extraLarge";
 
 interface LoaderProps {
   size?: LoaderSize;
-  variant?: keyof ReturnType<typeof loaderVariants>;
+  variant?: keyof typeof loaderVariants;
   className?: string;
 }
 const sizeMapper: Record<LoaderSize, "xs" | "sm" | "md" | "lg" | "xl"> = {
@@ -22,14 +22,18 @@ export const Loader: React.FC<LoaderProps> = ({
   className, 
   ...props
 }) => {
-  const theme = useMantineTheme();
-  const styles = useStyles(theme);
-  const variants = loaderVariants(theme);
-  const variantStyle = variants[variant] || variants.primary;
+  const variantStyle = loaderVariants[variant] || loaderVariants.primary;
 
   return (
-    <div style={{ ...styles.loaderWrapper, ...variantStyle }} className={className}>
-      <MantineLoader size={sizeMapper[size as LoaderSize]} color={variantStyle.color} {...props} />
+    <div style={{
+      color: variantStyle.color,
+      minHeight: 60,
+    }} className={className}>
+      <MantineLoader
+        size={sizeMapper[size as LoaderSize]}
+        color={variantStyle.color}
+        {...props}
+      />
     </div>
   );
 };

@@ -1,16 +1,8 @@
-import { rem, MantineTheme } from "@mantine/core";
+import { MantineTheme, DEFAULT_THEME } from "@mantine/core";
+import { theme } from '@/theme';
 
-export function useStyles(theme: MantineTheme) {  
-  return {
-    loaderWrapper: {
-      color: theme.colors[theme.primaryColor]?.[6] ?? theme.colors.blue[6],
-      minHeight: rem(60),
-    },
-  };
-}
+const colors = { ...DEFAULT_THEME.colors, ...theme.colors } as Record<string, readonly string[]>;
 
-export const loaderVariants = (theme: MantineTheme) => ({
-  primary: {
-    color: theme.colors.blue[6],
-  },
-});
+export const loaderVariants: Record<string, { color: string }> = {
+  primary: { color: colors.blue?.[6] ?? colors.indigo?.[6] ?? "#228be6" },
+};
