@@ -1,7 +1,36 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Button } from './Button';
+import { ButtonProps } from '@mantine/core';
 import { IconArrowRight, IconPhoto } from '@tabler/icons-react';
 import { fn, userEvent, expect, within, Mock } from '@storybook/test';
+
+
+const BUTTON_VARIANTS = [
+  'primary', 
+  'secondary', 
+  'success', 
+  'warning', 
+  'error', 
+  'outline', 
+  'ghost'
+] as const;
+
+const DISABLE_BUTTON_VARIANTS = [
+  'primary', 
+  'secondary', 
+  'success', 
+  'outline', 
+  'ghost'
+] as const;
+
+
+interface ButtonArgs extends ButtonProps {
+  style?: React.CSSProperties;
+  variant?: 'primary' | 'success' | 'warning' | 'error' | 'secondary' | 'outline' | 'ghost';
+  label?: string;
+  backgroundColor?: string;
+  onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
+}
 
 const meta: Meta<typeof Button> = {
   title: 'Components/UI/Button',
@@ -18,7 +47,7 @@ const meta: Meta<typeof Button> = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-async function ButtonClick(canvasElement: HTMLElement, args: any, buttonName: string) {
+async function ButtonClick(canvasElement: HTMLElement, args: ButtonArgs, buttonName: string) {
   const onClickMock = args.onClick as Mock;
   onClickMock.mockClear();
 
@@ -75,11 +104,11 @@ export const buttonWithIcon: Story = {
 export const buttonVariantsShowcase: Story = {
   render: ({ onClick }) => (
     <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem' }}>
-      {['primary', 'secondary', 'success', 'warning', 'error', 'outline', 'ghost'].map(
+      {BUTTON_VARIANTS.map(
         (variant) => (
           <Button 
             key={variant} 
-            variant={variant as any}
+            variant={variant}
             onClick={onClick}
           >
             {variant.charAt(0).toUpperCase() + variant.slice(1)} Button
@@ -96,8 +125,8 @@ export const buttonVariantsShowcase: Story = {
 export const disabledButtons: Story = {
   render: () => (
     <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem' }}>
-      {['primary', 'secondary', 'success', 'outline', 'ghost'].map((variant) => (
-        <Button key={variant} variant={variant as any} disabled>
+      {DISABLE_BUTTON_VARIANTS.map((variant) => (
+        <Button key={variant} variant={variant} disabled>
           Disabled {variant}
         </Button>
       ))}
