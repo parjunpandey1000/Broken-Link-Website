@@ -60,6 +60,10 @@ async function ButtonClick(canvasElement: HTMLElement, args: ButtonArgs, buttonN
     await userEvent.click(button);
 
     await expect(onClickMock).toHaveBeenCalledTimes(1);
+  } else {
+    const canvas = within(canvasElement);
+    const button = canvas.getByRole('button', { name: new RegExp(buttonName, 'i') });
+    await userEvent.click(button);
   }
 }
 
