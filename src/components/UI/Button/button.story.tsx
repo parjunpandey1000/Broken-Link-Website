@@ -40,7 +40,7 @@ const meta: Meta<typeof Button> = {
   },
   tags: ['autodocs'],
   args: {
-    onClick: fn(),
+    onClick: fn().mockReturnValue('Success!'),
   },
 };
 
@@ -64,7 +64,7 @@ async function ButtonClick(canvasElement: HTMLElement, args: ButtonArgs, buttonN
 export const button: Story = {
   args: {
     children: 'Click me!',
-    onClick: fn(),
+    onClick: fn().mockReturnValue('Success!'),
   },
   play: async ({ canvasElement, args }) => {
     await ButtonClick(canvasElement, args, 'Click me!');
@@ -91,7 +91,7 @@ export const buttonWithIcon: Story = {
   render: (args) => <Button {...args} />,
   args: {
     children: 'Button with icon',
-    onClick: fn(),
+    onClick: fn().mockReturnValue('Success!'),
     variant: 'primary',
     leftSection: <IconPhoto size={14} />,
     rightSection: <IconArrowRight size={14} />,
