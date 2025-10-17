@@ -7,16 +7,12 @@ import { useState, useEffect } from 'react';
 export const FeaturesCards = () => {
     const [isLarge, setIsLarge] = useState(window.innerWidth >= 600);
 
+    // track changes in screen size
     useEffect(() => {
         const mediaQuery = window.matchMedia("(min-width: 600px)");
-
         const handleChange = (event: MediaQueryListEvent) => setIsLarge(event.matches);
-
         mediaQuery.addEventListener("change", handleChange);
-
-        // Set initial state
         setIsLarge(mediaQuery.matches);
-
         return () => mediaQuery.removeEventListener("change", handleChange);
     }, []);
 

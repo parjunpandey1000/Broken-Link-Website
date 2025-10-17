@@ -13,8 +13,6 @@ export const featureCardStyles = {
   // colors
     backgroundColor: colors.primary[7],
     boxShadow: `0 1px 3px ${colors.primary[1]}`,
-    // ????
-    color: colors.cyan[0],
     // layout
     padding: theme.spacing.lg,
     borderRadius: '0.5rem',
@@ -25,11 +23,10 @@ export const featureCardStyles = {
 };
 
 export const titleStyle = {
-    color: colors.primary[0],
-
+    color: colors.primary[1]
 }
 export const paragraphStyle = {
-    color: colors.primary[0],
+    color: colors.primary[2],
     gridColumnStart: 2
 }
 
