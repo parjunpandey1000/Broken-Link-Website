@@ -1,5 +1,14 @@
 echo "Running pre-commit hook"
 
+commit_msg=$(git log -1 --pretty=%B)
+if echo "$commit_msg" | grep -iq "\[WIP\]"; then
+   echo "WIP was found in commit message, skipping pre-commit checks"
+   exit 0
+fi
+
+
+
+
 commands=("pnpm build"
           "pnpm storybook:build"     
           )
