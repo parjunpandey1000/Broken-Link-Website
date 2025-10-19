@@ -1,6 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Card } from './Card';
 import { Button } from '../Button/Button';
+import { within, userEvent } from '@storybook/testing-library';
+import { expect } from '@storybook/jest';
+import { vi } from 'vitest'; 
 
 const meta: Meta<typeof Card> = {
   title: 'Components/UI/Card',
@@ -68,4 +71,22 @@ export const CardWithNestedElements: Story = {
       </Button>
     </Card>
   ),
+};
+
+const onClickSpy = vi.fn();
+export const InteractionTest: Story = {
+  args: {
+    children: <Button onClick={onClickSpy}>Clickable Child</Button>,
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+
+    const childButton = canvas.getByRole('button', { name: /Clickable Child/i });
+    
+    await expect(childButton).toBeInTheDocument();
+
+    await userEvent.click(childButton);
+
+    await expect(onClickSpy).toHaveBeenCalledTimes(1);
+  },
 };
