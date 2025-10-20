@@ -44,9 +44,5 @@ export const paragraphStyle = {
 }
 
 export const iconStyle = {
-    colors: colors.cyan[4],
-    style: {
-        gridRowEnd: 'span 2'
-    },
-    size: 50
+    gridRowEnd: 'span 2'
 }

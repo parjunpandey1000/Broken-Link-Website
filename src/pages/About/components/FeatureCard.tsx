@@ -2,6 +2,7 @@ import { Card } from '@/components/UI/Card/Card';
 import { Typography } from '@/components/UI/Typography/Typography';
 import { featureCardStyles, iconStyle, paragraphStyle, titleStyle } from './styles';
 import { IconArrowGuide, IconBracketsAngle, IconFile, IconTarget } from '@tabler/icons-react';
+import { theme } from '@/theme';
 
 export const FeatureCard = (
     {icon, title, description}:
@@ -21,16 +22,19 @@ export const FeatureCard = (
 }
 
 const getIcon = (icon: string) => {
+    const color = theme.colors.cyan[4];
+    const size = 50;
+
     switch(icon) {
         case "iconTarget":
-            return <IconTarget color={iconStyle.colors} style={iconStyle.style} size={iconStyle.size} />;
+            return <IconTarget color={color} style={iconStyle} size={size} />;
         case "iconFile":
-            return <IconFile color={iconStyle.colors} style={iconStyle.style} size={iconStyle.size} />;
+            return <IconFile color={color} style={iconStyle} size={size} />;
         case "iconArrowGuide":
-            return <IconArrowGuide color={iconStyle.colors} style={iconStyle.style} size={iconStyle.size} />;
+            return <IconArrowGuide color={color} style={iconStyle} size={size} />;
         case "iconBracketsAngle":
-            return <IconBracketsAngle color={iconStyle.colors} style={iconStyle.style} size={iconStyle.size} />;
+            return <IconBracketsAngle color={color} style={iconStyle} size={size} />;
         default:
-            return <IconTarget color={iconStyle.colors} style={iconStyle.style} size={iconStyle.size} />;
+            return <IconTarget color={color} style={iconStyle} size={size} />;
     }
 }
