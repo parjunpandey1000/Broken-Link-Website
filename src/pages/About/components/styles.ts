@@ -2,9 +2,16 @@ import { theme } from '@/theme';
 
 const colors = theme.colors;
 
+export const centerGrid = {
+    display: 'flex',
+    justifyContent: "center",
+    alignItems: "center",
+    minHeight: "100vh"
+}
+
 export const containerStyle = {
     padding: theme.spacing.lg,
-    display: 'inline-grid',
+    display: 'grid',
     maxWidth: 'max-content',
     gap: theme.spacing.lg
 }
@@ -16,7 +23,7 @@ export const featureCardStyles = {
     // layout
     padding: theme.spacing.lg,
     borderRadius: '0.5rem',
-    display: "grid",
+    display: 'grid',
     gridTemplateColumns:"auto auto",
     gap: theme.spacing.lg,
     maxWidth: '40rem'
