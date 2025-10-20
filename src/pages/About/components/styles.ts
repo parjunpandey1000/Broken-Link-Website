@@ -9,11 +9,19 @@ export const centerGrid = {
     minHeight: "100vh"
 }
 
-export const containerStyle = {
+export const smallContainerStyle = {
     padding: theme.spacing.lg,
     display: 'grid',
     maxWidth: 'max-content',
-    gap: theme.spacing.lg
+    gap: theme.spacing.lg,
+    gridTemplateColumns: '1fr'
+}
+export const bigContainerStyle = {
+    padding: theme.spacing.lg,
+    display: 'grid',
+    maxWidth: 'max-content',
+    gap: theme.spacing.lg,
+    gridTemplateColumns: '1fr 1fr'
 }
 
 export const featureCardStyles = {

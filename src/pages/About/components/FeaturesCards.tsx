@@ -1,22 +1,15 @@
 import { Card } from '@/components/UI/Card/Card';
-import { containerStyle, featureCardStyles, iconStyle, paragraphStyle, titleStyle } from './styles';
+import { bigContainerStyle, smallContainerStyle, featureCardStyles, iconStyle, paragraphStyle, titleStyle } from './styles';
 import { Typography } from '@/components/UI/Typography/Typography';
 import { IconArrowGuide, IconBracketsAngle, IconFile, IconTarget } from '@tabler/icons-react';
 import { useState, useEffect } from 'react';
+import { useMediaQuery } from '@mantine/hooks';
 
 export const FeaturesCards = () => {
-    const [isLarge, setIsLarge] = useState(window.innerWidth >= 600);
-
-    useEffect(() => {
-        const mediaQuery = window.matchMedia("(min-width: 600px)");
-        const handleChange = (event: MediaQueryListEvent) => setIsLarge(event.matches);
-        mediaQuery.addEventListener("change", handleChange);
-        setIsLarge(mediaQuery.matches);
-        return () => mediaQuery.removeEventListener("change", handleChange);
-    }, []);
+    const bigScreen = useMediaQuery('(min-width: 600px)');
 
     return (
-        <div style={{...containerStyle, gridTemplateColumns: isLarge ? "1fr 1fr" : "1fr"}}>
+        <div style={bigScreen ? bigContainerStyle : smallContainerStyle}>
             <Card style={featureCardStyles}>
                 <IconTarget color={iconStyle.colors} style={iconStyle.style} size={iconStyle.size} />
                 <Typography variant='title' style={titleStyle}>
