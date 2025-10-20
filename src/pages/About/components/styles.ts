@@ -17,10 +17,8 @@ export const containerStyle = {
 }
 
 export const featureCardStyles = {
-  // colors
     backgroundColor: colors.primary[7],
     boxShadow: `0 1px 3px ${colors.primary[1]}`,
-    // layout
     padding: theme.spacing.lg,
     borderRadius: '0.5rem',
     display: 'grid',
