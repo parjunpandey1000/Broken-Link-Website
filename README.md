@@ -109,6 +109,7 @@ cp .env.example .env
 
 # PowerShell
 Copy-Item .env.example .env
+```
 
 ## Docker Setup
 
