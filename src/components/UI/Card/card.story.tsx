@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Card } from './Card';
 import { Button } from '../Button/Button';
-
+import { within, userEvent, expect, fn } from '@storybook/test';
 const meta: Meta<typeof Card> = {
   title: 'Components/UI/Card',
   component: Card,
@@ -68,4 +68,22 @@ export const CardWithNestedElements: Story = {
       </Button>
     </Card>
   ),
+};
+
+const mockOnClick = fn();
+export const InteractionTest: Story = {
+  args: {
+    children: <Button onClick={mockOnClick}>Clickable Child</Button>,
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+
+    const childButton = canvas.getByRole('button', { name: /Clickable Child/i });
+    
+    await expect(childButton).toBeInTheDocument();
+
+    await userEvent.click(childButton);
+
+    await expect(mockOnClick).toHaveBeenCalledTimes(1);
+  },
 };
