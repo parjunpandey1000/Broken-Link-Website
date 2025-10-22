@@ -1,9 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Card } from './Card';
 import { Button } from '../Button/Button';
-import { within, userEvent } from '@storybook/testing-library';
-import { expect } from '@storybook/jest';
-import { vi } from 'vitest'; 
+import { within, userEvent, expect, fn } from '@storybook/test';
 
 const meta: Meta<typeof Card> = {
   title: 'Components/UI/Card',
@@ -25,10 +23,10 @@ export const DefaultCard: Story = {
 export const CardWithImage: Story = {
   args: {
     children: (
-       <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem' }}>
         <img src="https://picsum.photos/200/150"  alt="Example" />
         <p>This is the card with the image!</p>
-      </div>
+        </div>
     ),
   },
 };
@@ -73,20 +71,20 @@ export const CardWithNestedElements: Story = {
   ),
 };
 
-const onClickSpy = vi.fn();
+const mockOnClick = fn();
 export const InteractionTest: Story = {
   args: {
-    children: <Button onClick={onClickSpy}>Clickable Child</Button>,
+    children: <Button onClick={mockOnClick}>Clickable Child</Button>,
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
 
     const childButton = canvas.getByRole('button', { name: /Clickable Child/i });
-    
+
     await expect(childButton).toBeInTheDocument();
 
     await userEvent.click(childButton);
 
-    await expect(onClickSpy).toHaveBeenCalledTimes(1);
+    await expect(mockOnClick).toHaveBeenCalledTimes(1);
   },
 };
