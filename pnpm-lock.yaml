@@ -130,7 +130,7 @@ importers:
         specifier: ^15.8.1
         version: 15.8.1
       storybook:
-        specifier: ^9.0.18
+        specifier: ^9.1.10
         version: 9.1.13(@testing-library/dom@10.4.1)(prettier@3.6.2)(vite@6.4.1(@types/node@22.18.12)(sugarss@4.0.1(postcss@8.5.6)))
       stylelint:
         specifier: ^16.20.0
