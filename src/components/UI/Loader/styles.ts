@@ -1,6 +1,5 @@
-
-export const loaderStyles ={
-  default : {
+export const loaderStyles = {
+  default: {
     minHeight: 60,
-  }
-}
+  },
+};

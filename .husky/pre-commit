@@ -1,7 +1,12 @@
+#!/usr/bin/env sh
+. "$(dirname "$0")/_/husky.sh"
+
+pnpm run prettier:write
+pnpm run eslint
 echo "Running pre-commit hook"
 
 commands=("pnpm build"
-          "pnpm storybook:build"     
+          "pnpm storybook:build"
           )
 
 for cmd in "${commands[@]}"; do

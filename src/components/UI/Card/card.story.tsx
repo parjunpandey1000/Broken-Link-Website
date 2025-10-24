@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Card } from './Card';
+import { expect, fn, userEvent, within } from '@storybook/test';
 import { Button } from '../Button/Button';
-import { within, userEvent, expect, fn } from '@storybook/test';
+import { Card } from './Card';
 
 const meta: Meta<typeof Card> = {
   title: 'Components/UI/Card',
@@ -23,10 +23,12 @@ export const DefaultCard: Story = {
 export const CardWithImage: Story = {
   args: {
     children: (
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem' }}>
-        <img src="https://picsum.photos/200/150"  alt="Example" />
+      <div
+        style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem' }}
+      >
+        <img src='https://picsum.photos/200/150' alt='Example' />
         <p>This is the card with the image!</p>
-        </div>
+      </div>
     ),
   },
 };
@@ -62,11 +64,10 @@ export const CardWithNestedElements: Story = {
     >
       <h3 style={{ margin: 0, marginBottom: '0.5rem' }}>Card Title</h3>
       <p style={{ fontSize: '0.9rem', marginBottom: '1rem' }}>
-        This is a card with nested elements like text, headers and buttons. It shows layout flexibility.
+        This is a card with nested elements like text, headers and buttons. It shows layout
+        flexibility.
       </p>
-      <Button variant="primary">
-        Learn More
-      </Button>
+      <Button variant='primary'>Learn More</Button>
     </Card>
   ),
 };
