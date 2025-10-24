@@ -96,6 +96,20 @@ To contribute:
 
 <p align="left"><a href="#top-btn">Go back to the top of the page</a></p>
 
+## Environment Variables
+
+This project includes a `.env.example` file in the repository that lists the environment variables required to run the app.
+
+**Before running the project**, create a local `.env` file based on the example.
+You can copy it quickly using the command below:
+
+```bash
+# macOS / Linux
+cp .env.example .env
+
+# PowerShell
+Copy-Item .env.example .env
+```
 
 ## Docker Setup
 
