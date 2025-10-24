@@ -5,7 +5,7 @@ import { Typography } from '@/components/UI/Typography/Typography';
 export const ErrorComponent = () => {
   return (
     <Card>
-      <Typography variant="h2">Something went wrong!</Typography>
+      <Typography variant='h2'>Something went wrong!</Typography>
       <Typography>We're sorry, but something unexpected happened.</Typography>
       <Typography>
         <strong>What you can try:</strong>

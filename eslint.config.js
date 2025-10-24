@@ -7,5 +7,12 @@ export default tseslint.config(
   {
     files: ['**/*.story.tsx'],
     rules: { 'no-console': 'off' },
+  },
+  {
+    files: ['**/*.{ts,tsx}'],
+    rules: {
+      quotes: ['error', 'single'],
+      'jsx-quotes': ['error', 'prefer-single'],
+    },
   }
 );

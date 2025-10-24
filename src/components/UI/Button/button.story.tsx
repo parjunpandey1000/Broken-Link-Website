@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Button } from './Button';
 import { IconArrowRight, IconPhoto } from '@tabler/icons-react';
+import { Button } from './Button';
 
 const meta: Meta<typeof Button> = {
   title: 'Components/UI/Button',
@@ -67,4 +67,3 @@ export const disabledButtons: Story = {
     </div>
   ),
 };
-

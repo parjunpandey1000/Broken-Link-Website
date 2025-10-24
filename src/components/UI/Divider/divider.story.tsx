@@ -23,8 +23,8 @@ export const HorizontalDivider: Story = {
         Content Above
       </div>
       <Divider
-        variant="primary"
-        orientation="horizontal"
+        variant='primary'
+        orientation='horizontal'
         style={{
           backgroundColor: 'blue',
           height: '3px',
@@ -52,8 +52,8 @@ export const VerticalDivider: Story = {
     >
       <div style={{ padding: '1rem', backgroundColor: '#f0f0f0' }}>Left Content</div>
       <Divider
-        variant="secondary"
-        orientation="vertical"
+        variant='secondary'
+        orientation='vertical'
         style={{
           backgroundColor: 'red',
           width: '3px',

@@ -1,8 +1,8 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import { Typography } from './Typography';
-import { expect } from '@storybook/jest';
-import { within } from '@storybook/testing-library';
 import { ReactNode } from 'react';
+import { expect } from '@storybook/jest';
+import type { Meta, StoryObj } from '@storybook/react';
+import { within } from '@storybook/testing-library';
+import { Typography } from './Typography';
 
 const meta: Meta<typeof Typography> = {
   title: 'Components/UI/Typography',
@@ -24,8 +24,6 @@ type StoryArgs = {
   lineClamp?: number;
 };
 
-
-
 const testIfTypographyIsRenderedCorrectly = async ({
   canvasElement,
   args,
@@ -46,7 +44,8 @@ export const typography: Story = {
     children: 'Hello World!',
     variant: 'success',
   },
-  play: ({ canvasElement, args }) => testIfTypographyIsRenderedCorrectly({ canvasElement, args: args as StoryArgs }),
+  play: ({ canvasElement, args }) =>
+    testIfTypographyIsRenderedCorrectly({ canvasElement, args: args as StoryArgs }),
 };
 
 export const typographyWithChildren: Story = {
@@ -66,20 +65,25 @@ export const typographyWithVariant: Story = {
     variant: 'title',
     component: 'h1',
   },
-  play: ({ canvasElement, args }) => testIfTypographyIsRenderedCorrectly({ canvasElement, args: args as StoryArgs }),
+  play: ({ canvasElement, args }) =>
+    testIfTypographyIsRenderedCorrectly({ canvasElement, args: args as StoryArgs }),
 };
 
 export const typographyWithBodyText: Story = {
   args: {
-    children: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum`,
+    children:
+      'lorm ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
   },
-  play: ({ canvasElement, args }) => testIfTypographyIsRenderedCorrectly({ canvasElement, args: args as StoryArgs }),
+  play: ({ canvasElement, args }) =>
+    testIfTypographyIsRenderedCorrectly({ canvasElement, args: args as StoryArgs }),
 };
 
 export const typographyWithTruncatedText: Story = {
   args: {
-    children: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum`,
+    children:
+      'lorn ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     lineClamp: 1,
   },
-  play: ({ canvasElement, args }) => testIfTypographyIsRenderedCorrectly({ canvasElement, args: args as StoryArgs }),
+  play: ({ canvasElement, args }) =>
+    testIfTypographyIsRenderedCorrectly({ canvasElement, args: args as StoryArgs }),
 };
