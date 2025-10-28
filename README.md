@@ -5,7 +5,8 @@
 
 ## Prefer a different language?
 
-This README is available in multiple languages. Click below to switch:
+This README is available in multiple languages. 
+Click below to switch:
 
 - 🇨🇳 [简体中文 (Simplified Chinese)](README-ZH-CN.md)
 - 🇧🇷 [Português Brasileiro](README-PT-BR.md)
